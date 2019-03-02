@@ -16,30 +16,32 @@
   </head>
   
   <body>
-    <div class="navbar"></div>
-  
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-        <div class="jumbotron jumbotron-fluid">
+    
+        <div class="row my-0">
+          <div class="col-md-12">
+        <div class="container jumbotron mb-0">
           <div class="container">
-            <h1 class="display-4"><h1 class="display-4">Word Guess Game</h1>
-            <p class="lead">Guess the word that is shown in blanks below.
-              <br> You have 6 guesses per word.
-              <br>Incorrect letters will be stored under the Wrong Guesses section.
-              <br>Correct Letters will replace the blanks.
-              <br> Press any key to begin!
+            <h1 class="display-4">Word Guess Game</h1>
+            <hr>
+            <p class="lead">
+              <ul>
+                <li>Guess the word that is shown in blanks below.</li>
+                <li> You have 6 guesses per word. </li>
+                <li>Incorrect letters will be stored under the Wrong Guesses section.</li>
+                <li>Correct Letters will replace the blanks.</li>
+                <li> Press any key to begin!</li>
+                </ul>
             </p>
+          </div></div>
           </div>
-        </div>
-      </div>
-    </div>
- 
+          </div>
+
+    <div class="container bananas pt-3">
         <div class="row">
             <div class="col-md-12 text-center">
                 <div class="row">
                   <div class="col-md-12">
-                    <p class="h1">Hint: All words are fruits!</h2>
+                    <p class="h1">Hint: All words are fruits!</p>
                     <p class="display-1" id="unsolved-puzzle"></p>
                     <p id="blanks"></p>
                   </div>
@@ -53,7 +55,7 @@
                 <div class="row my-4">
                   <div class="col-md-6 mx-auto bg-light" >
                     <span class="h1">Lives</span>
-                    <p class="display-1"id="lives"></p>
+                    <p class="display-1" id="lives"></p>
                   </div>
                   <div class="col-md-6 mx-auto bg-light">
                     <span class="h1">Wins</span>
@@ -71,10 +73,7 @@
             </div>
     
         </div>
-    </div>
-</div>
-</div>
-    <div class="footer"></div>
-    <script src="assets/javascript/game.js" type="text/javascript"></script>
+        <div class="container footer-bar my-0">  </div>
+    <script src="assets/javascript/game.js"></script>
   </body>
 </html>

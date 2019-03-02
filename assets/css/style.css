@@ -1,0 +1,16 @@
+
+
+.bananas {
+    background-image: url(../images/bananas.png)
+}
+
+li {
+    text-indent: 3rem;
+    line-height: 1.5em;
+}
+
+.footer-bar {
+    background-color: rgb(233,236,239);
+    min-height: 100px;
+    max-height: 100%;
+}
