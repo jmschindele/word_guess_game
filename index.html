@@ -14,36 +14,62 @@
     />
     <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
   </head>
+  
   <body>
     <div class="navbar"></div>
+  
     <div class="container">
-        <div class="row">
-            <div class="col-md-12 mx-auto text-center">
-                <h1>Word Guess Game</h1>
-            </div>
+      <div class="row">
+        <div class="col-md-12">
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="display-4"><h1 class="display-4">Word Guess Game</h1>
+            <p class="lead">Guess the word that is shown in blanks below.
+              <br> You have 6 guesses per word.
+              <br>Incorrect letters will be stored under the Wrong Guesses section.
+              <br>Correct Letters will replace the blanks.
+              <br> Press any key to begin!
+            </p>
+          </div>
         </div>
+      </div>
+    </div>
+ 
         <div class="row">
-            <div class="col-md-6 text-center">
+            <div class="col-md-12 text-center">
                 <div class="row">
                   <div class="col-md-12">
-                    <p>Guess the letters to spell the word!</p>
-                    <p id="unsolved-puzzle"></p>
+                    <p class="h1">Hint: All words are fruits!</h2>
+                    <p class="display-1" id="unsolved-puzzle"></p>
                     <p id="blanks"></p>
-                    <p id="user-input"></p>
                   </div>
                 </div>
-                <div class=row">
-                  <div class="col-md-12" >
-                    <p>Lives</p>
-                    <p id="lives"></p>
-                    <p>Wins</p>
-                    <p id="wins"></p>
-                    <p>Wrong Guesses</p>
-                    <p id="guessed-letters"></p>
+                <div class="row">
+                  <div class="col-md-12">
+                    <p class="text-center display-4">Wrong Guesses</p>
+                    <p class="h1" id="guessed-letters"></p>
+                  </div>
+                </div>
+                <div class="row my-4">
+                  <div class="col-md-6 mx-auto bg-light" >
+                    <span class="h1">Lives</span>
+                    <p class="display-1"id="lives"></p>
+                  </div>
+                  <div class="col-md-6 mx-auto bg-light">
+                    <span class="h1">Wins</span>
+                    <p class="display-1" id="wins"></p>
+                  </div>
+                  <div class=row>
+                    <div class="col-md-12">
+
+                   
+                    
+                  </div>
+                </div>
                   </div>
                 </div>
             </div>
-            <div class="col-md-6"><img src="http://www.ilearngreek.com/images/p.png"></div>
+    
         </div>
     </div>
 </div>

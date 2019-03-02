@@ -1,5 +1,14 @@
 // create an array of words for the computer to guess
-var targetWord = ["apple", "banana", "orange", "grape", "strawberry","cranberry","papaya","dragonfruit"];
+var targetWord = [
+  "apple",
+  "banana",
+  "orange",
+  "grape",
+  "strawberry",
+  "cranberry",
+  "papaya",
+  "dragonfruit"
+];
 // define other variables
 var start;
 var wordIndex = 0;
@@ -8,7 +17,7 @@ var letterBlanks = "";
 var blankHolder = [];
 var userGuess;
 var keyPress;
-var userInput = document.getElementById("user-input");
+
 var allBlanks = [];
 var wrongGuess = [];
 var wins;
@@ -47,63 +56,66 @@ for (var i = 0; i < computerChoice.length; i++) {
 document.onkeydown = function(e) {
   keyPress = event.key;
 
-//remove special characters from inputs
-if (event.keyCode >= 65 && event.keyCode <= 90) {
+  //remove special characters from inputs
+  if (event.keyCode >= 65 && event.keyCode <= 90) {
+    //Add condition that prompts user of repeated keys
+    if (wrongGuess.indexOf(keyPress) > -1) {
+      alert("You've already pressed that letter!");
+    }
 
-  //Add condition that prompts user of repeated keys
-  if (wrongGuess.indexOf(keyPress) > -1) {
-    alert("You've already pressed that letter!");
-  }
-
-
-  //Add a for loop to replace blanks with characters based on position
-  for (var i = 0; i < computerChoice.length; i++) {
-    if (computerChoice.charAt(i) == keyPress){
-      allBlanks[i] = keyPress;
-      wordBlanks.textContent = allBlanks.join(" ");
-    } else if (
-    /* Add condition that finds unused wrong keypresses and displays them for user  
+    //Add a for loop to replace blanks with characters based on position
+    for (var i = 0; i < computerChoice.length; i++) {
+      if (computerChoice.charAt(i) == keyPress) {
+        allBlanks[i] = keyPress;
+        wordBlanks.textContent = allBlanks.join(" ");
+      } else if (
+        /* Add condition that finds unused wrong keypresses and displays them for user  
 and takes away a life */
-      wrongGuess.indexOf(keyPress) == -1 &&
-      computerChoice.indexOf(keyPress) == -1
-    ) {
-      wrongGuess.push(keyPress);
-      lives--;
-      document.getElementById("lives").innerHTML = lives;
-      wrongGuess.sort();
-      document.getElementById("guessed-letters").innerHTML = wrongGuess.join(
-        " "
-      );
+        wrongGuess.indexOf(keyPress) == -1 &&
+        computerChoice.indexOf(keyPress) == -1
+      ) {
+        wrongGuess.push(keyPress);
+        lives--;
+        document.getElementById("lives").innerHTML = lives;
+        wrongGuess.sort();
+        document.getElementById("guessed-letters").innerHTML = wrongGuess.join(
+          " "
+        );
+      }
     }
   }
-}
 };
 
 // place win and lose conditions on Key Up for timing consistency
 document.onkeyup = function(e) {
-    //Add win condition
-    if (computerChoice == allBlanks.join("").toString()) {
-      alert("You Win!");
-      wins++;
-      document.getElementById("wins").innerHTML = wins;
+  //Add win condition
+  if (computerChoice == allBlanks.join("").toString()) {
+    alert("You Win!");
+    wins++;
+    document.getElementById("wins").innerHTML = wins;
     //Choose new word
-      wordGen();
-      computerChoice = targetWord[wordIndex];
+    lives = 6;
+    document.getElementById("lives").innerHTML = lives;
+    wordGen();
+    computerChoice = targetWord[wordIndex];
     //Reset Stats
-      lives = 7;
-      allBlanks = [];
-      wrongGuess = [];
+    
+    allBlanks = [];
+    
+    wrongGuess = [];
+    
+    document.getElementById("guessed-letters").innerHTML = wrongGuess;
     // computer converts word into underscores and displays on webpage
-      for (var i = 0; i < computerChoice.length; i++) {
-          allBlanks.push("_");
-          wordBlanks.textContent = allBlanks.join(" ");
-          document.getElementById("unsolved-puzzle").appendChild(wordBlanks);
-          }
+    for (var i = 0; i < computerChoice.length; i++) {
+      allBlanks.push("_");
+      wordBlanks.textContent = allBlanks.join(" ");
+      document.getElementById("unsolved-puzzle").appendChild(wordBlanks);
     }
+  }
 
-      //Add gameover condition
+  //Add gameover condition
   if (lives === 0) {
     alert("You Lose!");
     location.reload();
   }
-} 
+};
