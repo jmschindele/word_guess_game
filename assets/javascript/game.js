@@ -7,7 +7,22 @@ var targetWord = [
   "strawberry",
   "cranberry",
   "papaya",
-  "dragonfruit"
+  "pomegranate",
+  "apricot",
+  "blueberry",
+  "cantaloupe",
+  "mango",
+  "cherry",
+  "coconut",
+  "lime",
+  "grapefruit",
+  "guava",
+  "honeydew",
+  "kiwi",
+  "kumquat",
+  "peach",
+  "plum",
+  "raspberry"
 ];
 // define other variables
 var start;
