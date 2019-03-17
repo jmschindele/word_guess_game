@@ -103,7 +103,7 @@ and takes away a life */
 
 // place win and lose conditions on Key Up for timing consistency
 document.onkeyup = function(e) {
-  //Add win condition
+  //Add win coition
   if (computerChoice == allBlanks.join("").toString()) {
     alert("You Win!");
     wins++;
@@ -114,11 +114,11 @@ document.onkeyup = function(e) {
     wordGen();
     computerChoice = targetWord[wordIndex];
     //Reset Stats
-    
+
     allBlanks = [];
-    
+
     wrongGuess = [];
-    
+
     document.getElementById("guessed-letters").innerHTML = wrongGuess;
     // computer converts word into underscores and displays on webpage
     for (var i = 0; i < computerChoice.length; i++) {
