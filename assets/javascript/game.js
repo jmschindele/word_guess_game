@@ -75,7 +75,7 @@ document.onkeydown = function(e) {
   if (event.keyCode >= 65 && event.keyCode <= 90) {
     //Add condition that prompts user of repeated keys
     if (wrongGuess.indexOf(keyPress) > -1) {
-      alert("You've already pressed that letter!");
+      // alert("You've already pressed that letter!");
     }
 
     //Add a for loop to replace blanks with characters based on position
@@ -91,6 +91,7 @@ and takes away a life */
       ) {
         wrongGuess.push(keyPress);
         lives--;
+        $("#hangman-image").attr("src", "assets/images/hangman/hangman"+ lives + ".JPG");
         document.getElementById("lives").innerHTML = lives;
         wrongGuess.sort();
         document.getElementById("guessed-letters").innerHTML = wrongGuess.join(
@@ -105,11 +106,12 @@ and takes away a life */
 document.onkeyup = function(e) {
   //Add win coition
   if (computerChoice == allBlanks.join("").toString()) {
-    alert("You Win!");
+    // alert("You Win!");
     wins++;
     document.getElementById("wins").innerHTML = wins;
     //Choose new word
     lives = 6;
+    $("#hangman-image").attr("src", "assets/images/hangman/hangman"+ lives + ".JPG")
     document.getElementById("lives").innerHTML = lives;
     wordGen();
     computerChoice = targetWord[wordIndex];
@@ -129,8 +131,8 @@ document.onkeyup = function(e) {
   }
 
   //Add gameover condition
-  if (lives === 0) {
-    alert("You Lose!");
+  if (lives <= 0) {
+    // alert("You Lose!");
     location.reload();
   }
 };
